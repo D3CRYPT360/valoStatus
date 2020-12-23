@@ -1,0 +1,32 @@
+Change Log
+==========
+
+0.0.1 (23/12/2020)
+-------------------
+- Initial Release
+-------------------
+0.0.2 (23/12/2020)
+- Fixed some bugs with the readme
+- Fixed some bugs with Region file
+-------------------
+0.0.3 (23/12/2020)
+- Fixed a bug with the readme
+-------------------
+0.0.4 (23/12/2020)
+- Fixed the links in the readme
+-------------------
+0.0.5 (23/12/2020)
+- Fixed an issue with the tags
+-------------------
+0.0.6 (23/12/2020)
+- Final Fix with the readme
+-------------------
+0.0.7 (23/12/2020)
+- Final Final Fix with the readme
+-------------------
+0.0.8 (23/12/2020)
+- Fixed another issue with the readme 
+-------------------
+1.0.8 (23/12/2020)
+- Removed all the test code which i accidentally pushed
+-------------------
