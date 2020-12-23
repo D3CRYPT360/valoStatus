@@ -25,6 +25,19 @@ SOFTWARE.
 import requests
 
 class Region:
+    """
+    NA - North America
+    
+    EU - Europe
+    
+    BR - Brazil
+    
+    AP - Asia Pacific
+    
+    KR - Korea
+    
+    LATAM - Latin America
+    """
     def __init__(self, region):
         self.region = region
         
