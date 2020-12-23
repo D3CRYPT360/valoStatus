@@ -80,9 +80,12 @@ print(region.maintenances_reason())
 # Links
 
 **[PyPi](https://pypi.org/project/valoStatus/)**
+
 **[Github](https://github.com/D3CRYPT360/valoStatus)**
 
 # Support
 **[Github Profile](https://github.com/D3CRYPT360)**
+
+**[Example Discord bot](https://github.com/D3CRYPT360/valorant-server_status_checker-discord_bot)**
 
 DM `@D3crypt360` on Twitter
