@@ -4,6 +4,16 @@ A python library to check for Riot Games server status for **VALORANT** [valoran
 # Installation
 `pip install valoStatus`
 
+# Region List
+```
+NA - North America
+EU - Europe
+BR - Brazil
+AP - Asia Pacific
+KR - Korea
+LATAM - Latin America
+```
+
 # Example code (we will use NA region as an example)
 
 ### Check if there is an issue with the server
