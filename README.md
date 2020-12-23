@@ -52,13 +52,13 @@ from valoStatus import Region
 region = Region("NA")
 
 #to get the title of the incident:
-print(region.incident_title())
+print(region.incidents_title())
 
 #to get the date of the incident:
-print(region.incident_date())
+print(region.incidents_date())
 
 #to get the reason of the incident:
-print(region.incident_reason())
+print(region.incidents_reason())
 ```
 
 ### Maintenances
