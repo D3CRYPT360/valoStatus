@@ -2,9 +2,8 @@ import setuptools
 
 setuptools.setup(
     name='valoStatus',
-    version='1.0.9',
+    version='1.0.10',
     author='D3CRYPT360',
-    author_email="lordomega360@gmail.com",
     description='A python library to check for Riot Games server status for VALORANT without an API key',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
