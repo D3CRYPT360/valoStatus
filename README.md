@@ -1,5 +1,5 @@
 # valoStatus
-A python library to check for Riot Games server status for **VALORANT** [valorant server status website](https://status.riotgames.com/valorant?locale=en_US)
+A python module to check for Riot Games server status for **VALORANT** [valorant server status website](https://status.riotgames.com/valorant?locale=en_US)
 
 # Installation
 `pip install valoStatus`
