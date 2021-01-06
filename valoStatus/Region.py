@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-import requests
+import aiohttp
 
 class Region:
     """
@@ -42,8 +42,15 @@ class Region:
         self.region = region
         
     def requests(self):
-        r = requests.get(f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json")
-        if r.status_code == 200:
+        url = f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json"
+        async def requests():
+            async with aiohttp.ClientSession() as session:
+                async with session.options(url) as response:
+                    global STATUS
+                    STATUS = response.status
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(requests())
+        if STATUS == 200:
             json_data = r.json()
             return json_data
         else:
