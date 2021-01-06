@@ -45,7 +45,7 @@ class Region:
         url = f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json"
         async def requests():
             async with aiohttp.ClientSession() as session:
-                async with session.options(url) as response:
+                async with session.get(url) as response:
                     global STATUS
                     STATUS = response.status
         loop = asyncio.get_event_loop()
