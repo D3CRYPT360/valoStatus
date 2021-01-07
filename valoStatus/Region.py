@@ -46,6 +46,7 @@ class Region:
         async def getstatusurl():
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json") as response:
+                    global j
                     global r
                     r = response
                     j = await r.json()
