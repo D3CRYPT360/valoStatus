@@ -48,12 +48,12 @@ class Region:
                 async with session.get(f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json") as response:
                     global r
                     r = response
+                    j = await r.json()
                     await session.close()
         loop = asyncio.get_event_loop()
         loop.run_until_complete(getstatusurl())
         if r.status == 200:
-            json_data = r.json()
-            return json_data
+            return j
         else:
             return
         
