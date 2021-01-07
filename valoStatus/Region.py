@@ -57,14 +57,13 @@ class Region:
             return j
         else:
             return
-        
+   
     def get_status(self):
-        
         json_data = self.requests()
         if not json_data['incidents'] and not json_data['maintenances']:
-            return ({'issue':False,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']})
+            return {'issue':False,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']}
         else:
-            return ({'issue':True,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']})
+            return {'issue':True,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']}
     
     def get_status_issue(self):
         """
@@ -78,50 +77,42 @@ class Region:
     def incidents_title(self):
         """to get the title of the incident:"""
         try:
-            title = (self.get_status()["incidents"][0]['titles'][0]['content'])
-            return title
+            return self.get_status()["incidents"][0]['titles'][0]['content']
         except IndexError:
             return
         
     def incidents_date(self):
         """to get the date of the incident:"""
         try:
-            date = (self.get_status()['incidents'][0]['updates'][0]['created_at'][:10])
-            return date
+            return self.get_status()['incidents'][0]['updates'][0]['created_at'][:10]
         except IndexError:
             return
         
     def incidents_reason(self):
         """to get the reason of the incident:"""
         try:
-            message = (self.get_status()['incidents'][0]['updates'][0]['translations'][0]['content'])
-            return message
+            return self.get_status()['incidents'][0]['updates'][0]['translations'][0]['content']
         except IndexError:
             return
         
     def maintenances_title(self):
         """to get the title of the maintenance:"""
         try:
-            
-            title = (self.get_status()["maintenances"][0]['titles'][0]['content'])
-            return title
+            return self.get_status()["maintenances"][0]['titles'][0]['content']
         except IndexError:
             return
         
     def maintenances_date(self):
         """to get the date of the maintenance:"""
         try:
-            
-            date = (self.get_status()['maintenances'][0]['updates'][0]['created_at'][:10])
-            return date
+            return self.get_status()['maintenances'][0]['updates'][0]['created_at'][:10]
         except IndexError:
             return
         
     def maintenances_reason(self):
         """to get the reason of the maintenance:"""
         try:
-            message = (self.get_status()['maintenances'][0]['updates'][0]['translations'][0]['content'])
-            return message
+            return self.get_status()['maintenances'][0]['updates'][0]['translations'][0]['content']
         except IndexError:
             return
         
