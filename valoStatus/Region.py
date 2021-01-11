@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-import asyncio
+from asyncio import get_event_loop
 import aiohttp
 
 class Region:
@@ -51,7 +51,7 @@ class Region:
                     r = response
                     j = await r.json()
                     await session.close()
-        loop = asyncio.get_event_loop()
+        loop = get_event_loop()
         loop.run_until_complete(getstatusurl())
         if r.status == 200:
             return j
@@ -59,11 +59,11 @@ class Region:
             return
    
     def get_status(self):
-        json_data = self.requests()
-        if not json_data['incidents'] and not json_data['maintenances']:
-            return {'issue':False,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']}
-        else:
-            return {'issue':True,'incidents':json_data['incidents'],'maintenances':json_data['maintenances']}
+        return {
+                'issue':not self.requests()['incidents'] and not self.requests()['maintenances'],
+                'incidents':self.requests()['incidents'],
+                'maintenances':self.requests()['maintenances']
+               }
     
     def get_status_issue(self):
         """
