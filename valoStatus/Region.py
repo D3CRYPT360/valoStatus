@@ -60,7 +60,7 @@ class Region:
    
     def get_status(self):
         return {
-                'issue':not self.requests()['incidents'] and not self.requests()['maintenances'],
+                'issue':self.requests()['incidents'] and self.requests()['maintenances'],
                 'incidents':self.requests()['incidents'],
                 'maintenances':self.requests()['maintenances']
                }
