@@ -1,2 +1,4 @@
 /valoStatus.egg-info
 /dist
+/build
+.vscode
