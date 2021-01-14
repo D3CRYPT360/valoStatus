@@ -2,7 +2,7 @@
 """
 MIT License
 
-Copyright (c) 2020 D3crypt360 
+Copyright (c) 2020 - 2021 D3crypt360
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from asyncio import get_event_loop
+import asyncio
 import aiohttp
 
 class Region:
@@ -51,18 +51,18 @@ class Region:
                     r = response
                     j = await r.json()
                     await session.close()
-        loop = get_event_loop()
-        loop.run_until_complete(getstatusurl())
+        asyncio.run(getstatusurl())
         if r.status == 200:
             return j
         else:
             return
    
     def get_status(self):
+        status = self.requests()
         return {
-                'issue':self.requests()['incidents'] or self.requests()['maintenances'],
-                'incidents':self.requests()['incidents'],
-                'maintenances':self.requests()['maintenances']
+                'issue':status['incidents'] or self.requests()['maintenances'],
+                'incidents':status['incidents'],
+                'maintenances':status['maintenances']
                }
     
     def get_status_issue(self):
