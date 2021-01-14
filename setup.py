@@ -17,5 +17,5 @@ setuptools.setup(
     python_requires='>= 3.6',
     keywords=['valorant','gaming','gamers'], 
     include_package_data=True,
-    install_requires=['requests']
+    install_requires=['aiohttp', 'nest_asyncio']
 )
