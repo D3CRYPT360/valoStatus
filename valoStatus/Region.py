@@ -24,6 +24,7 @@ SOFTWARE.
 """
 import asyncio
 import aiohttp
+import nest_asyncio
 
 class Region:
     """
@@ -51,6 +52,7 @@ class Region:
                     r = response
                     j = await r.json()
                     await session.close()
+        nest_asyncio.apply()
         asyncio.run(getstatusurl())
         if r.status == 200:
             return j
