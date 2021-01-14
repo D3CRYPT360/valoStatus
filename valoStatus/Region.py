@@ -60,7 +60,7 @@ class Region:
     def get_status(self):
         status = self.requests()
         return {
-                'issue':status['incidents'] or self.requests()['maintenances'],
+                'issue':status['incidents'] or status['maintenances'],
                 'incidents':status['incidents'],
                 'maintenances':status['maintenances']
                }
