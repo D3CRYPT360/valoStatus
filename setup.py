@@ -8,7 +8,7 @@ setuptools.setup(
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
     url='https://github.com/D3CRYPT360/valStatus',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=("testkit")),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
