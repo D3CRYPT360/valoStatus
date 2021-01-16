@@ -42,10 +42,7 @@ else:
 """
 `self.incident_check()` and `self.maintenance_check()` would return:
 True == There is an issue.
-
-**we are not doing False here
-since we already have a check for that
-via `self.get_status_issue()`**
+False == There is no issue
 """
 from valoStatus import Region
 
