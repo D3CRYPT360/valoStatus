@@ -15,7 +15,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>= 3.6',
-    keywords=['valorant','gaming','gamers'], 
+    keywords=['valorant','gaming','gamers','riot','riotgames'], 
     include_package_data=True,
-    install_requires=['aiohttp', 'nest_asyncio']
+    install_requires=['requests']
 )
