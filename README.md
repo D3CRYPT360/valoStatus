@@ -1,5 +1,6 @@
 # valoStatus
 valoStatus is a Python module to check for Riot Games server status for **VALORANT** [VALORANT Server Status Page](https://status.riotgames.com/valorant?locale=en_US)
+This is not fully complete check **TODO** section
 
 If you like this please star the repo. :)
 
@@ -87,6 +88,10 @@ print(region.maintenance_date())
 #to get the reason of the maintenance:
 print(region.maintenance_reason())
 ```
+# TODO
+- Add function for affected platforms
+- Add function for time (currently shows date only)
+- Colour status function? (may or may not add, basically each type of status has a different colour)
 
 # Links
 
