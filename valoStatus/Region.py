@@ -31,7 +31,7 @@ class Region:
         self.region = region
         
     def request(self):
-        conn.request("GET", "f/channels/public/x/status/{self.region.casefold()}.json")
+        conn.request("GET", f"/channels/public/x/status/{self.region.casefold()}.json")
         r = conn.getresponse()
         json_data = json.loads(r.read())
         if r.status == 200:
