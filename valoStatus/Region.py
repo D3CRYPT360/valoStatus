@@ -27,10 +27,10 @@ import http.client
 
 class Region:
     def __init__(self, region):
-        self._conn = http.client.HTTPSConnection("valorant.secure.dyn.riotcdn.net")
         self.region = region
         
     def request(self):
+        conn = http.client.HTTPSConnection("valorant.secure.dyn.riotcdn.net")
         conn.request("GET", f"/channels/public/x/status/{self.region.casefold()}.json")
         r = conn.getresponse()
         json_data = json.loads(r.read())
