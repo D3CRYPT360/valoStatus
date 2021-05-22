@@ -22,15 +22,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-import requests
+import json
+import http.client
+
 class Region:
     def __init__(self, region):
         self.region = region
         
     def request(self):
-        r = requests.get(f"https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/{self.region.lower()}.json")
-        json_data = r.json()
-        if r.status_code == 200:
+        conn = http.client.HTTPSConnection("valorant.secure.dyn.riotcdn.net")
+        conn.request("GET", f"/channels/public/x/status/{self.region.casefold()}.json")
+        r = conn.getresponse()
+        json_data = json.loads(r.read())
+        if r.status == 200:
             return json_data
         else:
             return
