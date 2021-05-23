@@ -7,8 +7,12 @@ If you like this please star the repo. :)
 
 If you would like to contribute to the project feel free to make a PR and fix bugs or make the code even better. :D
 
+# Python Version
+- Python 3.6 and above should work
+
 # Installation
 `pip install valoStatus`
+
 
 # Region List
 ```
