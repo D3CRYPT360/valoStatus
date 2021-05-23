@@ -50,12 +50,13 @@ from valoStatus import Region
 
 region = Region("NA")
 if region.get_status_issue() == True:
-    # code
-else:
+    
     if region.incident_check() == True:
         # code
     elif region.maintenance_check() == True:
         # code 
+else:
+    # code
 ```
 
 ### Incidents
@@ -106,3 +107,5 @@ print(region.maintenance_reason())
 **[Example Discord bot](https://github.com/D3CRYPT360/valorant-server_status_checker-discord_bot)**
 
 DM `@D3crypt360` on Twitter
+
+DM DΞCRYPT#9779 on Discord
