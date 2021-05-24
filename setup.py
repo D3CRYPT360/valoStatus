@@ -7,7 +7,7 @@ setuptools.setup(
     description='A python module to check for Riot Games server status for VALORANT without an API key',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url='https://github.com/D3CRYPT360/valStatus',
+    url='https://github.com/D3CRYPT360/valoStatus',
     packages=setuptools.find_packages(exclude=("testkit")),
     classifiers=[
         "Programming Language :: Python :: 3",
