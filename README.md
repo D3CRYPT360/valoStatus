@@ -112,4 +112,4 @@ print(region.maintenance_reason())
 
 DM `@D3crypt360` on Twitter
 
-DM DΞCRYPT#9779 on Discord
+DM D3CRYPT#9779 on Discord
